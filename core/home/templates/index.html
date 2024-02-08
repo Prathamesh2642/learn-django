@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django tutorial </title>
+    <style>
+    table, th, td {
+        border: 1px solid black;
+        border-radius: 10px;
+      }</style>
+</head>
+
+<body>
+    <h1>Prathamesh Patil</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur deleniti iusto dolor, dicta vel ipsam repellat, eius delectus natus aut voluptatibus deserunt ab beatae harum. Rerum est beatae sunt impedit!</p>
+    <h3>{{names}}</h3>
+
+    <table border="">
+        <tr>
+          <th>Sr no.</th>
+          <th>Names</th>
+          <th>Age</th>
+          <th>Can vote</th>
+        </tr>
+        {%for person in names %}
+        <tr>
+          <td>{{forloop.counter}}</td>
+          <td>{{person.name}}</td>
+          <td>{{person.age}}</td>
+          <td {% if person.age < 18 %} style=background:green {% endif %} >
+            {% if person.age > 18 %}
+            👍
+            {%else%}
+            🤡
+            {%endif%}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+
+      <p>{{random_text}}</p>
+
+      <p>
+        {% if "Alka" in attendance %}
+        Alka
+        {% elif "tejas" in attendance %}
+        Tejas
+        {% else %}
+        not Present
+        {%endif%}
+
+      </p>
+</body>
+</html>

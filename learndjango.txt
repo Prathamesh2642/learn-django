@@ -1,0 +1,76 @@
+backend development - backend application development
+	admin panel
+	orm
+	authentication
+most popular backend framework- alt - node js,laravel,spring
+
+
+1.Virtual environment - it is a type of environment which consists of all the modules/libraries required for a particular project
+	
+	virtualenv "envname"  	-"envname" folder created
+	cd "envname"
+	cd Scripts
+	activate
+
+	cd ..
+	cd ..
+
+2.Django start
+	pip install django
+	django.__version__
+	django-admin startproject "projectname"
+
+after creation of the projectfile, from now we will be using manage.py in the project folder for further project management instead of django-admin
+
+__init__.py - reading the folder structure : import and export of file
+asgi - asynchrounous gateway interface 
+wsgi - web server gateway interface
+urls - mapping urls - routing
+settings- project settings
+
+
+creating first app in django
+in the core folder
+
+python manage.py startapp home - creates new directory home with 				 following files
+
+__init__.py - reading and managing all the files in the directory
+admin.py 	
+apps.py
+models.py - managing database related stuff 
+tests.py - project testing stuff
+views.py - project logical part - data flow from backend to frontend
+
+in the settings section of core project file in the installed apps section add the apps name in the list to ensure that the  particular app belongs to that project
+
+
+
+views - logical part of django app
+ two types - class based and function based
+we have to return actual jinja or html template from backend server
+
+when we want to send data from backend to the html webpage we use the concept of context
+
+to perform iteration in html code we write that specific code in 
+	{% for i in range %}
+	{%endfor %}
+	
+	{% if condition %}
+	body
+	{%elif condition%}
+	body
+	{%else%}
+	body
+	{%endif%}
+
+
+templates is an inbuilt directory of django hence it can be automatically read by django 
+
+in django we can integrate html css and js at a time 
+
+apps of django are reusable - 
+
+booting up server 
+python manage.py runserver ~ python manage.py runserver 0.0.0.0:5000 - run on custom server ~ 127.0.0.0:8000 - 0.0.0.0:8000 = localhost
+
+spotify udemy instagram
