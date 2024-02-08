@@ -70,6 +70,22 @@ sometimes html code or any type of code is redundant in some of the html webpage
     {% endblock%}
 
 
+Models and Migration:
+models
+Responsible for database related tasks here we define the schema of the database that our project/app is going to use.
+define structure
+
+migration - most important folder.
+every time you make any changes to any of the models or database you've to hit this command to register the model to sqlite database which is bydefault for django
+
+python manage.py makemigrations
+python manage.py migrate
+
+if 2 or more migration files are dependent on each other and if one of the migration file is deleted whole database collapses. it can be viewed on the dbsqlite viewer if any problem has occured.
+
+when some changes are made to the models file in django, and migrate command is hit, django creates a state of all the models file in the project and matches it with the previous states of the model to check for any changes
+
+
 templates is an inbuilt directory of django hence it can be automatically read by django 
 
 in django we can integrate html css and js at a time 
