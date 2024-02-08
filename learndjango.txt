@@ -64,6 +64,12 @@ to perform iteration in html code we write that specific code in
 	{%endif%}
 
 
+<a href="contacts-page">Contacts</a> - used to route html pages or connect one page to another
+
+sometimes html code or any type of code is redundant in some of the html webpage document here we can add the redundant code in one of the other files like base.html and the changing code can be given in the tag {% block start%}
+    {% endblock%}
+
+
 templates is an inbuilt directory of django hence it can be automatically read by django 
 
 in django we can integrate html css and js at a time 

@@ -12,15 +12,15 @@ Attendance=['Prathamesh','sanjay','alka','tejas']
 
 def home(request):
     # return HttpResponse("<h1>Hello this is django server</h1>")
-    return render(request,"index.html",context={'names':names,'random_text':random_text,'attendance':Attendance})
+    return render(request,"index.html",context={'names':names,'random_text':random_text,'attendance':Attendance,'page':'homepage'})
 
 def contact(request):
     # return HttpResponse("<h1>Hello this is django server</h1>")
-    return render(request,"contacts.html",context={})
+    return render(request,"contacts.html",context={'page':'contact'})
 
 def about(request):
     # return HttpResponse("<h1>Hello this is django server</h1>")
-    return render(request,"about.html",context={})
+    return render(request,"about.html",context={'page':'about'})
 
 def success_page(requests):
     print("*"*10)

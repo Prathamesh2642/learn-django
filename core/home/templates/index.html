@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Django tutorial </title>
-    <style>
-    table, th, td {
-        border: 1px solid black;
-        border-radius: 10px;
-      }</style>
-</head>
+{% extends "base.html"%}
 
-<body>
+{% block start%}
     <h1>Prathamesh Patil</h1>
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur deleniti iusto dolor, dicta vel ipsam repellat, eius delectus natus aut voluptatibus deserunt ab beatae harum. Rerum est beatae sunt impedit!</p>
     <h3>{{names}}</h3>
@@ -51,5 +40,9 @@
         {%endif%}
 
       </p>
-</body>
-</html>
+
+      <a href="contacts-page">Contacts</a>|
+      <a href="about-page">About</a>
+
+{%endblock%}
+
