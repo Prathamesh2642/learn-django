@@ -8,8 +8,6 @@ class Student(models.Model): #schema is defined with the help of classes.
     age=models.IntegerField()
     email=models.EmailField()
     address=models.TextField()
-    # image=models.ImageField() 
-    file=models.FileField()
 
 class product(models.Model):
     name=models.CharField(max_length=50)
