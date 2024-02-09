@@ -4,18 +4,19 @@
 
 <h2>This is receipes page</h2>
 
-<form class="container mt-5">
+<form class="container mt-5" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
     <div class="col-6 mx-auto card p-3 shadow-lg">
-      <label for="receipename" class="form-label">Receipe Name</label>
-      <input type="text" class="form-control">
+      <label for="receipename"  class="form-label">Receipe Name</label>
+      <input type="text" class="form-control" name="receipe_name" required>
     </div>
     <div class="mb-3">
-      <label for="receipedesc" class="form-label">Receipe Description</label>
-      <input type="textarea" class="form-control">
+      <label for="receipedesc" class="form-label" >Receipe Description</label>
+      <input type="textarea" class="form-control" name="receipe_description" required>
     </div>
     <div class="mb-3">
-        <label for="receipeimage" class="form-label">Receipe image</label>
-        <input type="file" class="form-control">
+        <label for="receipeimage" class="form-label" >Receipe image</label>
+        <input type="file" class="form-control" name="receipe_image">
       </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>

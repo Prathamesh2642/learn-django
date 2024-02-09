@@ -211,7 +211,19 @@ urls	4.Add this app in the urls section to assign urls the 			receipes.html webp
 	5. we can inherit html code else we can write our own
 	6.the class(in html webpage) will be of post method as it is 	sending data from form to the app.
 	backend -> Frontend -- send via context in views.py
-	frontend-> Backend -- (Post method) data from form to backend 
+	frontend-> Backend -- (Post method) data from form to backend
+
+when performing the post method from the frontend to the backend it is compulsory to give name attribute to each of the form elements that is posting the data. when we are uploading anyfile from html form to backend server the encoding type is to be specified in form attribute 
+as enctype="multiplart/form-data".apart from that if data needs to be sent from frontend to backend django needs to check for the validity of data and also to check whether the data is being sent to the same server as it is deployed onto for that:-
+	{%csrf_token%} is used to perform the later.
+
+	to get files from front end to backend apart from method POST
+	receipe_image=request.FILES.get(name in html of files) is done		this command helps to obtain file from the frontend
+
+we store the posted data in a variable and then put it in the 
+classname.objects.create() command to store it in a db
+
+to avoid the problem of resubmission of data we redirect the webpage to the same webpage after execution.
 
 
 
