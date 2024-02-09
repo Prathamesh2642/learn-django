@@ -17,11 +17,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home.views import *
+from vege.views import *
 
+#creating routes -
 urlpatterns = [
     path('home',home,name='home'),
     path('success-page',success_page,name='Success'),
     path('about-page',about,name='about'),
     path('contacts-page',contact,name='contacts'),
+    path('receipes',receipes,name='receipes'),
     path('admin/', admin.site.urls),
 ]

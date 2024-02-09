@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{%block start%}
+
+
+<h2>This is receipes page</h2>
+
+<form class="container mt-5">
+    <div class="col-6 mx-auto card p-3 shadow-lg">
+      <label for="receipename" class="form-label">Receipe Name</label>
+      <input type="text" class="form-control">
+    </div>
+    <div class="mb-3">
+      <label for="receipedesc" class="form-label">Receipe Description</label>
+      <input type="textarea" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label for="receipeimage" class="form-label">Receipe image</label>
+        <input type="file" class="form-control">
+      </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+ {%endblock%}

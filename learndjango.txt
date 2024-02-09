@@ -86,6 +86,143 @@ if 2 or more migration files are dependent on each other and if one of the migra
 when some changes are made to the models file in django, and migrate command is hit, django creates a state of all the models file in the project and matches it with the previous states of the model to check for any changes
 
 
+Django Shell :
+python manage.py shell
+
+insert data into models ~ database 
+shell opens a kind of interactive window
+
+student=Student(name="",age="",email="",address="")
+student is an object of Student class
+
+student.save() - saves data in db
+alternative way
+student=Student.objects.create()
+Student.objects.create()
+ - objects here is a model manager if we use this method then we dont have to call the save() 
+
+alternative way
+student_dict={'name':,'age':,'email':}
+student.objects.create(**student_dict)
+
+student - prints the number of instances in that instance of class
+
+to get the data from the db 
+classname.objects.all() : returns a list of all the object instances in that db
+classname.objects.all()[index].field - retrieves value 
+
+normally while printing classname.objects.all() it returns the object 
+which is unreadable to counter that we can override the string method 
+with this way in the model class.
+    def __str__(self) -> str:
+        return self.name
+
+
+we can print id of the object using {classname.id}
+
+we can get particular value in the db using id which acts as a primary key using get()
+
+classname.objects.get(columnname=value) 
+if value does not exist this will return an exception
+ 
+to counter that
+classname.objects.filter(columnname=value) can be used in this case it will return a empty queryset
+ 
+
+
+
+we cannot directly run any python file in django directly to check for functionality of the function because every file in django is binded, so to perform the operation we can use django shell to check for our logic correctness.
+
+
+CRUD operations :- 
+Create Read Update Delete
+
+CREATE:- 
+
+cars=Car()
+cars.name=""
+cars.speed=10
+cars.save()
+
+student=Student(name="",age="",email="",address="")
+student is an object of Student class
+
+student.save() - saves data in db
+alternative way
+student=Student.objects.create()
+Student.objects.create()
+ - objects here is a model manager if we use this method then we dont have to call the save() 
+
+alternative way
+student_dict={'name':,'age':,'email':}
+student.objects.create(**student_dict)
+
+
+READ 
+
+to get the data from the db 
+classname.objects.all() : returns a list of all the object instances in that db
+classname.objects.all()[index].field - retrieves value 
+
+normally while printing classname.objects.all() it returns the object 
+which is unreadable to counter that we can override the string method 
+with this way in the model class.
+    def __str__(self) -> str:
+        return self.name
+
+
+we can print id of the object using {classname.id}
+
+we can get particular value in the db using id which acts as a primary key using get()
+
+classname.objects.get(columnname=value) 
+if value does not exist this will return an exception
+ 
+to counter that
+classname.objects.filter(columnname=value) can be used in this case it will return a empty queryset
+ 
+
+
+UPDATE:-
+classname.objects.filter(col=val).update(col=newval)
+we cannot use the get() method for updation instead we will use filter() method
+
+
+DELETE:-
+cars.objects.get(id=2).delete() - delete id 2
+cars.objects.filter(id=1).delete() - delete id 1
+cars.objects.all().delete() - deletes everything
+
+
+
+
+-----------------------------------------------------------------------
+While creating new app
+steps:-
+models	1.Create models file to define the structure of database
+		class receipe(models.Model):
+			structure
+			makemigration 
+			migrate
+settings2.Define the external app in settings.py 
+		this is present in the main project directory
+Views -	3.Define the the receipes function here which is return by the 		backend. this returns the html file using render 
+urls	4.Add this app in the urls section to assign urls the 			receipes.html webpage,also import vege app in the url section.
+	5. we can inherit html code else we can write our own
+	6.the class(in html webpage) will be of post method as it is 	sending data from form to the app.
+	backend -> Frontend -- send via context in views.py
+	frontend-> Backend -- (Post method) data from form to backend 
+
+
+
+
+
+
+
+
+bootstrap- class="container mt-5"
+	   class="col-6 mx-auto"
+
 templates is an inbuilt directory of django hence it can be automatically read by django 
 
 in django we can integrate html css and js at a time 
@@ -96,3 +233,9 @@ booting up server
 python manage.py runserver ~ python manage.py runserver 0.0.0.0:5000 - run on custom server ~ 127.0.0.0:8000 - 0.0.0.0:8000 = localhost
 
 spotify udemy instagram
+
+
+To revise:
+	Python OOP
+	Html & Css
+	Bootstrap

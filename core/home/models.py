@@ -13,3 +13,10 @@ class product(models.Model):
     name=models.CharField(max_length=50)
     price=models.PositiveIntegerField()
     number=models.BigIntegerField()
+
+class car(models.Model):
+    name=models.CharField(max_length=50)
+    speed=models.IntegerField(default=50)
+
+    def __str__(self) -> str:
+        return self.name
