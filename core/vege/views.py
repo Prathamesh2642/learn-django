@@ -19,4 +19,8 @@ def receipes(request):
         return redirect('/receipes')
 
         # print(receipe_name,receipe_description,receipe_image)
-    return render(request,"receipes.html")
+    queryset=Receipe.objects.all()
+    context={'receipe':queryset} # context is key value pair
+    return render(request,"receipes.html",context)
+
+

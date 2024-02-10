@@ -21,4 +21,28 @@
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 
+<!-- <div>{{receipe}}</div> -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Receipe name</th>
+      <th scope="col">Receipe Description</th>
+      <th scope="col">Receipe Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for rec in receipe%}
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{rec.receipe_name}}</td>
+      <td>{{rec.receipe_description}}</td>
+      <td>
+        <img src="media/{{rec.receipe_image}}" alt="{{rec.receipe_name}}" height="20px" width="30px">
+      </td>
+    </tr>
+    {%endfor%}
+  </tbody>
+</table>
+
  {%endblock%}
